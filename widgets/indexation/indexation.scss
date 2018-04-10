@@ -1,0 +1,28 @@
+@import '../../assets/stylesheets/application';
+// ----------------------------------------------------------------------------
+// Sass declarations
+// ----------------------------------------------------------------------------
+$background-info: #3fbb44;
+
+$title-color:       rgba(255, 255, 255, 0.7);
+
+// ----------------------------------------------------------------------------
+// Widget-text styles
+// ----------------------------------------------------------------------------
+.widget-indexation {
+
+  background-color: $background-info;
+
+  .title {
+    color: $title-color;
+  }
+
+  .updated-at {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+
+  &.large h3 {
+    font-size: 65px;
+  }
+}

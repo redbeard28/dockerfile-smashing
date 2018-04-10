@@ -1,0 +1,13 @@
+<h1 class="title" data-bind="title"></h1>
+
+<img class="background" src="/assets/atlassian-jira-logo.png">
+
+<ul class="items list-nostyle">
+  <li class="item" data-foreach-ticket="issues" data-bind-class="ticket.widget_class">
+	<span class="label project" data-bind="ticket.infos"></span>
+	<span class="label branch" data-bind="ticket.name"></span>
+	<div class="clearfix" />
+  </li>
+</ul>
+
+<p class="updated-at" data-bind="updatedAtMessage"></p>

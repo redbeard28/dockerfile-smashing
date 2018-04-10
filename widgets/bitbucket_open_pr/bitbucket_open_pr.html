@@ -1,0 +1,27 @@
+<h1 class="title"><span data-bind="prs_dev_count"></span> <span data-bind="title"></span></h1>
+
+<img class="background" src="/assets/bitbucket.png">
+
+<ul class="items list-nostyle">
+  <li class="item" data-foreach-pr="projects_devs" data-bind-class="pr.widget_class">
+	<span class="label project" data-bind="pr.projectName"></span>
+	<span class="label branch" data-bind="pr.title"></span>
+	<img class="avatar" data-bind-src="pr.avatar_url" />
+	<span class="label branch" data-bind="pr.code_review_details"></span>
+    <div class="clearfix" />
+  </li>
+</ul>
+
+<h1 class="title"><span data-bind="prs_po_count"></span> <span data-bind="title2"></span></h1>
+
+<ul class="items list-nostyle">
+	<li class="item" data-foreach-pr="projects_po" data-bind-class="pr.widget_class">
+		<span class="label project" data-bind="pr.projectName"></span>
+		<span class="label branch" data-bind="pr.title"></span>
+		<img class="avatar" data-bind-src="pr.avatar_url" />
+		<span class="label branch" data-bind="pr.code_review_details"></span>
+		<div class="clearfix" />
+	</li>
+</ul>
+
+<p class="updated-at" data-bind="updatedAtMessage"></p>

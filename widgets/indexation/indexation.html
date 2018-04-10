@@ -1,0 +1,65 @@
+<h1 class="title">Indexation annonces</h1>
+
+<h3 data-bind="status"></h3>
+
+<h1 class="title">Historique</h1>
+
+<table>
+    <tr>
+        <th>
+            Jour
+        </th>
+        <th>
+            Erreurs
+        </th>
+        <th>
+            Interruptions
+        </th>
+    </tr>
+    <tr>
+        <td>
+            J
+        </td>
+        <td>
+            <span class="n-error" data-bind="errors[0]"></span>
+        </td>
+        <td>
+            <span class="n-critical" data-bind="criticals[0]"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            J-1
+        </td>
+        <td>
+            <span class="n-error" data-bind="errors[1]"></span>
+        </td>
+        <td>
+            <span class="n-critical" data-bind="criticals[1]"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            J-2
+        </td>
+        <td>
+            <span class="n-error" data-bind="errors[2]"></span>
+        </td>
+        <td>
+            <span class="n-critical" data-bind="criticals[2]"></span>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            J-3
+        </td>
+        <td>
+            <span class="n-error" data-bind="errors[3]"></span>
+        </td>
+        <td>
+            <span class="n-critical" data-bind="criticals[3]"></span>
+        </td>
+    </tr>
+</table>
+
+<p class="updated-at" data-bind="updatedAtMessage"></p>
