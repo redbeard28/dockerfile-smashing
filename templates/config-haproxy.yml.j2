@@ -1,0 +1,17 @@
+:haproxy:
+  :instances:
+    'ha1': '"{{ ha1_url }}"'
+    'ha2': '"{{ ha2_url }}"'
+  :username: '"{{ haproxy_username }}"'
+  :password: '{{ vault_haproxy_user_pwd }}'
+  :pxname_exclude:
+  :pxname_include:
+  :svname_exclude:
+    - 'backend'
+    - 'frontend'
+  :svname_include:
+  {% for haUrl in haproxy_urls %}
+    - haUrl.urlgroup
+  {% endfor %}
+  :critical: 50.0
+  :warning: 75.0
