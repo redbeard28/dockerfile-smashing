@@ -20,7 +20,7 @@ servers = {% for srv in serverstatus_servers %}
     		[{name: srv.name, url: srv.url, method: srv.method}srv.cr
 		  {% endfor %}
 
-SCHEDULER.every '{{ serverstatus_sheduleevery }}', :first_in => 0 do |job|
+SCHEDULER.every '"{{ serverstatus_sheduleevery }}"', :first_in => 0 do |job|
 
 	statuses = Array.new
 
