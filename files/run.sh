@@ -31,6 +31,12 @@ if [[ ! -z "$PORT" ]]; then
   PORT_ARG="-p $PORT"
 fi
 
+echo "
+#####################################################
+#   STARTING RUN.SH                                 #
+#####################################################"
+
+
 # Start smashing
 exec smashing start $PORT_ARG
 
