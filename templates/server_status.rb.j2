@@ -17,7 +17,7 @@ require 'uri'
 #		{name: 'gateway', url: '127.0.0.1', method: 'ping'}]
 
 servers = {% for srv in serverstatus_servers %}
-    		[{name: {{ srv.name }}, url: {{ srv.url }}, method: {{ srv.method }}}{{ srv.cr }}
+    		[{name: '{{ srv.name }}', url: '{{ srv.url }}', method: '{{ srv.method }}'}'{{ srv.cr }}'
 		  {% endfor %}
 
 SCHEDULER.every '"{{ serverstatus_sheduleevery }}"', :first_in => 0 do |job|
