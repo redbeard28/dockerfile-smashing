@@ -3,7 +3,7 @@ require 'csv'      # for parsing API response
 require 'yaml'     # for parsing config file
 require 'json'     # for hash transform
 
-config = YAML.load File.open("config-haproxy.yml")
+config = YAML.load File.open("/jobs/config-haproxy.yml")
 config = config[:haproxy]
 config[:green] ||= "#96bf48"
 config[:yellow] ||= "#E2CF6A"
