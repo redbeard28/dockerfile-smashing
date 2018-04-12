@@ -5,7 +5,7 @@ require 'json'
 #
 # Hard coded configuration variables - should not be updated unless you know what you are doing
 #
-yamlFile = "/jobs/icinga.yml"
+yamlFile = "./icinga.yml"
 serviceStateMap = %w(OK WARNING CRITICAL UNKNOWN)
 hostStateMap = %w(UP DOWN UNREACHABLE PENDING)
 
@@ -25,7 +25,7 @@ class IcingaRequest
                 :authkey,
                 :target,
                 :filter,
-                :columns,
+                :columns,"
                 :column_count,
                 :order,
                 :output
