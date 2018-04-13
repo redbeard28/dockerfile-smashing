@@ -11,7 +11,7 @@
     - 'frontend'
   :svname_include:
   {% for haUrl in haproxy_urls %}
-    - haUrl.urlgroup
+    - '{{ haUrl.urlgroup }}'
   {% endfor %}
   :critical: 50.0
   :warning: 75.0
