@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+# Add needed libraries
+require 'net/http'
+require 'json'
+
+# UCS Director API Key
+fqdn = '{{ prometheus_url }}'
+api = '/api/v1'
+
+# The URI from above, split over a few lines (replace ipaddr as needed)
+uri = URI(URI.escape('http://' + fqdn + api + '/alertes'))
+
+# Build an HTTP header
+http_request = Net::HTTP::Get.new(uri.request_uri)
+
+# Add the API key
+#http_request.add_field("X-Cloupia-Request-Key", api_key)
+
+SCHEDULER.every '120s', :first_in => 0 do |job|
+
+        # Fetch it:
+        http_response = Net::HTTP.start(uri.hostname, uri.port) {|http|
+        http.request(http_request)
+        }
+
+        # Check response for http 200 (OK) and print the output
+        if (http_response.code == "200") then
+                # Parse http response using above library
+                response = JSON.parse(http_response.body)
+                # Iterate through each of the rows above
+                alerte = response["data"]["labels"]["alertname"]
+                send_event('prometheus', alerte )
+        end
+
+end

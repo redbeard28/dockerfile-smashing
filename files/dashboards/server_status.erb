@@ -1,14 +1,11 @@
 <% content_for :title do %>URL STATUS<% end %>
 <div class="gridster">
   <ul>
-<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-  <div data-id="server_status" data-view="ServerStatus" data-title="URL STATUS"></div>
-</li>
-<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-	      <div data-id="chparents" data-view="Meter" data-title="Temperature chparents" data-min="0" data-max="100"></div>
-</li>
-
-<li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-           <div data-id="cctemp" data-view="Meter" data-title="Temperature" data-min="0" data-max="100"></div>
-</li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+        <div data-id="server_status" data-view="ServerStatus" data-title="URL STATUS"></div>
+    </li>
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+        <div data-id="alerte" data-view="List" data-title="Alert Manager" data-moreinfo="from prometheus"  style="background-color:#E5412D"></div>
+    </li>
+  </ul>
 </div>
